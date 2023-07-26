@@ -36,5 +36,18 @@
     "@nx/angular:component": {
       "style": "scss"
     }
+  },
+  "architect": {
+    "build": {
+      "options": {
+        "assets": [
+          {
+            "glob": ".env",
+            "input": "src",
+            "output": "./"
+          }
+        ]
+      }
+    }
   }
 }

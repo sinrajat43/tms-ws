@@ -9,6 +9,6 @@ export class AppController {
   @Get('/hello')
   getData() {
     console.log('THIS IS HIT!!!!!!!!!!!!')
-    return this.appService.getData();
+    return {"value":this.appService.getData()};
   }
 }

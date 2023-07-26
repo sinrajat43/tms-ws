@@ -8,20 +8,24 @@ import { HttpService } from '../../services/http.service';
 })
 export class DashboardComponent {
 
+  diss: any
+
   constructor(private httpService: HttpService) {}
 
   ngOnInit(): void {
-    this.httpService.getData().subscribe(
-      (data) => {
+    this.httpService.getData().subscribe({
+      next: (data) => {
         // Handle successful response
-        console.log('got data',data);
+        this.diss=data.value
+        console.log('got data', data);
       },
-      (error) => {
+      error: (error) => {
         // Handle error
-        console.error('got error',error);
+        console.error('got error', error);
       }
-    );
+    });
   }
+  
   
 
 }
