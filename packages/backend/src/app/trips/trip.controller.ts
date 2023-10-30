@@ -8,13 +8,12 @@ export class TripController {
   constructor(private readonly tripService: TripService) {}
 
   @Get()
-  findAll() {
-    return this.tripService.findAll();
+  async findAll() {
+    return await this.tripService.findAll();
   }
 
   @Post()
   create(@Body() createTrip:Trip) {
-    console.log('in controller of trip')
     return this.tripService.create(createTrip);
   }
 }

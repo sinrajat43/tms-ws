@@ -38,6 +38,12 @@
     }
   },
   "architect": {
+      "serve": {
+        "options": {
+          "proxyConfig": "./proxy.conf.js"
+        }
+      },
+    
     "build": {
       "options": {
         "assets": [

@@ -8,7 +8,6 @@ export class AppController {
 
   @Get('/hello')
   getData() {
-    console.log('THIS IS HIT!!!!!!!!!!!!')
     return {"value":this.appService.getData()};
   }
 }

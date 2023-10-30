@@ -1,0 +1,17 @@
+<h2>Add Trip</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <!-- Add your form inputs here -->
+  <mat-form-field appearance="fill">
+    <label>Source</label>
+    <input matInput formControlName="source" required/>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <label>Destination</label>
+    <input matInput formControlName="destination" required/>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+  <button mat-raised-button color="warn" (click)="close()">Cancel</button>
+</form>

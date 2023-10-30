@@ -10,18 +10,18 @@ import { TripService } from './trips/trip.service';
 
 
 @Module(
-  {
-    imports: [ConfigModule.forRoot(),
-      MongooseModule.forRootAsync({
-        imports: [ConfigModule],
-        useFactory: async (configService: ConfigService) => ({
-          uri: configService.get('MONGODB_URI'),
-          dbName: 'tms-prod',
-          useNewUrlParser: true,
-          useUnifiedTopology: true,
-        }),
-        inject: [ConfigService],
-      }),MongooseModule.forFeature([{ name: 'Trip', schema: TripSchema }])],
+{
+  imports: [ConfigModule.forRoot(),
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) => ({
+        uri: configService.get('MONGODB_URI'),
+        dbName: 'tms-prod',
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }),
+      inject: [ConfigService],
+    }),MongooseModule.forFeature([{ name: 'Trip', schema: TripSchema }])],
   controllers: [AppController,TripController],
   providers: [AppService,TripService],
 })
